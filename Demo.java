@@ -1,18 +1,13 @@
 public class Demo{
   public static void printLoop(int x){
-    for(int i = x; i > 0; i--){
-      for(int j = 0; j < 1; j++);{
-        System.out.print(x- i + 1);
+    for(int i = 1; i <= x; i++){
+      for(int j = 0; j <= x - i; j++){
+        System.out.print(i);
       }
       System.out.println();
     }
   }
   public static void main(String[] args){
-    if (args.length == 1){
-      printLoop(Integer.parseInt(args[0]));
-    }
-    else{
-      printLoop(5);
-    }
+    printLoop(5);
   }
 }
