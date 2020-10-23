@@ -33,6 +33,24 @@ public class Demo{
     }
     return (array + "}");
   }
-
+  public static int[][] create2DArray(int rows, int cols, int maxValue){
+    int[][] array = new int[rows][cols];
+    for(int i = 0; i < rows; i++){
+      for(int j = 0; j < cols; j++){
+        array[i][j] = (int)(maxValue * Math.random());
+      }
+    }
+    return (array);
+  }
+  public static int[][] create2DArrayRandomized(int rows, int cols, int maxValue){
+    int[][] array = new int[rows][];
+    for(int i=0; i< rows; i++){
+      array[i] = new int [(int)(Math.random()* cols)];
+      for(int j=0; j<array[i].length;j++){
+        array[i][j] = (int)(maxValue * (Math.random()));
+      }
+    }
+    return array;
+  }
 
 }
