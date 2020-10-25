@@ -7,9 +7,9 @@ public class Demo{
       System.out.println();
     }
   }
-  public static void main(String[] args){
-    printLoop(5);
-  }
+  //public static void main(String[] args){
+  //  printLoop(5);
+  //}
 
 
   public static String arrToString(int[] arr){
@@ -23,7 +23,8 @@ public class Demo{
     array += "}";
     return array;
   }
-  public static String arrDeepToString(int[][] arr){
+
+  public static String arrayDeepToString(int[][] arr){
     String array = "{";
     for(int i = 0; i < arr.length; i++){
       array += arrToString(arr[i]);
@@ -33,21 +34,23 @@ public class Demo{
     }
     return (array + "}");
   }
+
   public static int[][] create2DArray(int rows, int cols, int maxValue){
     int[][] array = new int[rows][cols];
     for(int i = 0; i < rows; i++){
       for(int j = 0; j < cols; j++){
-        array[i][j] = (int)(maxValue * Math.random());
+        array[i][j] = (int)(Math.random() * maxValue);
       }
     }
     return (array);
   }
+
   public static int[][] create2DArrayRandomized(int rows, int cols, int maxValue){
     int[][] array = new int[rows][];
     for(int i=0; i< rows; i++){
-      array[i] = new int [(int)(Math.random()* cols)];
+      array[i] = new int [(int)(Math.random() * (cols + 1))];
       for(int j=0; j<array[i].length;j++){
-        array[i][j] = (int)(maxValue * (Math.random()));
+        array[i][j] = (int)(Math.random() * maxValue);
       }
     }
     return array;
